@@ -3,3 +3,4 @@ Werkzeug==2.3.7
 mypy==1.5.1
 flake8==6.1.0
 pre-commit==3.4.0
+google-genai==0.3.0
