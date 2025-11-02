@@ -56,7 +56,10 @@ class TodoDatabase:
         )
 
         conn.commit()
-        todo_id: int = int(cursor.lastrowid)
+        last_id = cursor.lastrowid
+        if last_id is None:
+            raise ValueError("Failed to insert todo")
+        todo_id: int = int(last_id)
         conn.close()
 
         return Todo(
